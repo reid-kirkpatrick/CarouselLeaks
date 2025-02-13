@@ -23,9 +23,6 @@
 	      RowSpacing="16">
 
 		<pancardview:CarouselView Grid.ColumnSpan="2"
-		                          IsAutoNavigatingAnimationEnabled="False"
-		                          IsCyclical="False"
-		                          IsVerticalSwipeEnabled="False"
 		                          IsViewReusingEnabled="False"
 		                          ItemTemplate="{StaticResource TemplateSelector}"
 		                          ItemsSource="{Binding Items}"
