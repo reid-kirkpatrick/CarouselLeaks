@@ -6,6 +6,16 @@
              xmlns:pancardview="clr-namespace:PanCardView;assembly=PanCardView"
              x:DataType="local:MainViewModel">
 
+	<ContentPage.Resources>
+		<local:ItemDataTemplateSelector x:Key="TemplateSelector">
+			<local:ItemDataTemplateSelector.ItemTemplate>
+				<DataTemplate>
+					<local:ItemView />
+				</DataTemplate>
+			</local:ItemDataTemplateSelector.ItemTemplate>
+		</local:ItemDataTemplateSelector>
+	</ContentPage.Resources>
+
 	<Grid Padding="32"
 	      ColumnDefinitions="*,*"
 	      ColumnSpacing="32"
@@ -13,14 +23,9 @@
 	      RowSpacing="16">
 
 		<pancardview:CarouselView Grid.ColumnSpan="2"
+		                          ItemTemplate="{StaticResource TemplateSelector}"
 		                          ItemsSource="{Binding Items}"
-		                          SelectedItem="{Binding SelectedItem}">
-			<pancardview:CarouselView.ItemTemplate>
-				<DataTemplate>
-					<local:ItemView />
-				</DataTemplate>
-			</pancardview:CarouselView.ItemTemplate>
-		</pancardview:CarouselView>
+		                          SelectedItem="{Binding SelectedItem}" />
 
 		<Button Grid.Row="1"
 		        Command="{Binding RefreshCommand}"
