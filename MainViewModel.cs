@@ -28,5 +28,10 @@ public partial class MainViewModel : ObservableObject
 	}
 
 	[RelayCommand]
-	public void Collect() => GC.Collect();
+	public void Collect()
+	{
+		GC.Collect();
+		GC.WaitForPendingFinalizers();
+		GC.Collect();
+	}
 }
