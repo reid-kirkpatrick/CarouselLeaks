@@ -24,6 +24,7 @@
 
 		<pancardview:CarouselView Grid.ColumnSpan="2"
 		                          IsViewReusingEnabled="False"
+								  IsAutoNavigatingAnimationEnabled="False"
 		                          ItemTemplate="{StaticResource TemplateSelector}"
 		                          ItemsSource="{Binding Items}"
 		                          SelectedItem="{Binding SelectedItem}" />
